@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(), EndGameFragment.OnInputListener {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.options_menu, menu)
         val autoStartMenuItem = menu.getItem(0)
-        autoStartMenuItem.isChecked = game.autoStartNewGame
+        autoStartMenuItem.isChecked = game.autoStart
         return true
     }
 
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), EndGameFragment.OnInputListener {
 
         when(item.itemId) {
             R.id.auto_start -> {
-                game.autoStartNewGame = !game.autoStartNewGame
+                game.autoStart = !game.autoStart
                 item.isChecked = !item.isChecked
             }
 
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity(), EndGameFragment.OnInputListener {
 
         Handler().postDelayed( {
 
-            if(game.autoStartNewGame) {
+            if(game.autoStart) {
                 game.startNewGame()
                 newGameAnimation()
             }

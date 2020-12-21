@@ -13,7 +13,7 @@ class Game (context: Context) : Serializable {
     val playerWord : StringBuilder = StringBuilder("")
     var lettersMap = HashMap<Char, Boolean?>()
     private val words = arrayListOf<String>()
-    var autoStartNewGame : Boolean = false
+    var autoStart : Boolean = false
 
     init {
 
