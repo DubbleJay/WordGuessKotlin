@@ -83,6 +83,13 @@ class MainActivity : AppCompatActivity(), EndGameFragment.OnInputListener {
                 game.autoStartNewGame = !game.autoStartNewGame
                 item.isChecked = !item.isChecked
             }
+
+            R.id.start_new_game -> {
+                if (!game.isGameComplete()) {
+                    game.startNewGame()
+                    newGameAnimation()
+                }
+            }
         }
 
         return super.onOptionsItemSelected(item)
